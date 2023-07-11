@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+    
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="password_generator_app_maui.MainPage"
+             Title="MainPagePasswordGenerator"
+             BackgroundColor="#030522">
+
+
+    <StackLayout>
+
+        <!-- Main Title -->
+        <Label
+            Text="Password Generator"
+            TextColor="White"
+            FontSize="35"
+            HorizontalTextAlignment="Center"
+            FontFamily="Archivo Black"
+            Margin="0, 25, 0, 0"
+            />
+        
+        <!-- Second Title -->
+        <Label 
+            Text="Random, Secure and Free"
+            TextColor="White"
+            HorizontalTextAlignment="Center"
+            FontSize="30"
+            FontFamily="Lobster"
+            Margin="0, 10, 0, 0"
+            />
+
+
+        <!-- Container for the Password generator -->
+        <Border 
+            Padding="1"
+            Stroke="White"
+            HeightRequest="360"
+            Margin="20"
+            HorizontalOptions="Center"
+            WidthRequest="330"
+            >
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15" />
+            </Border.StrokeShape>
+
+            <Grid
+                MinimumHeightRequest="360"
+                BackgroundColor="#030522">
+
+                <!-- Password Label and Input  -->
+                <Grid>
+                    
+                    <Label 
+                        Text="Password :"
+                        TextColor="White"
+                        FontSize="25"
+                        Margin="20, 10, 0, 10"
+                        HorizontalOptions="StartAndExpand"
+                    />
+
+                    <Border
+                        Margin="20, -170, 20, 0 "
+                        BackgroundColor="#151732"
+                        HeightRequest="50"
+                    >
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5"/>
+                        </Border.StrokeShape>
+                        <Entry 
+                            x:Name="PasswordField"
+                            Placeholder="Password"
+                            HorizontalTextAlignment="Center"
+                            FontSize="23"
+                            BackgroundColor="#151732"
+                            TextColor="White"
+                            HeightRequest="50"
+                        >
+                        </Entry>
+                    </Border>
+                </Grid>
+                
+                
+                <!-- Length Label and Input -->
+                <Grid>
+                    <Label 
+                        Text="Number of characters :
+                            (min 1 - max 24)"
+                        TextColor="White"
+                        FontSize="25"
+                        Margin="20, 120, 0, 10"
+                        HorizontalOptions="StartAndExpand"
+                    />
+
+                    <Border
+                        Margin="20, 120, 20, 0 "
+                        BackgroundColor="#151732"
+                        HeightRequest="50"
+                        >
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="5"/>
+                        </Border.StrokeShape>
+                        <Entry 
+                            x:Name="LengthField"
+                            Placeholder="13"
+                            HorizontalTextAlignment="Center"
+                            FontSize="23"
+                            BackgroundColor="#151732"
+                            TextColor="White"
+                        >
+                        </Entry>
+                    </Border>
+                </Grid>
+
+
+
+                <Button
+                    HeightRequest="50"
+                    Margin="20, 270, 20, 0"
+                    Text="Generate"
+                    FontSize="25"
+                    Padding="0, 0, 0, 0"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    Clicked="Generate_Password"
+                >
+
+                </Button>
+
+            </Grid>
+            
+        </Border>
+
+    </StackLayout>
+
+</ContentPage>
